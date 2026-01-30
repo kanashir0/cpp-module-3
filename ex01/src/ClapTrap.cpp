@@ -6,7 +6,7 @@
 /*   By: gyasuhir <gyasuhir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/30 16:55:56 by gyasuhir          #+#    #+#             */
-/*   Updated: 2026/01/30 17:48:29 by gyasuhir         ###   ########.fr       */
+/*   Updated: 2026/01/30 17:41:20 by gyasuhir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ ClapTrap::~ClapTrap(void) {
 }
 
 ClapTrap&	ClapTrap::operator=(const ClapTrap& other) {
-	std::cout << "ClapTrap " << _name << " has been assigned from " << other.getName() << "." << std::endl;
+	std::cout << "ClapTrap " << _name << " has been assigned to " << other.getName() << "." << std::endl;
 	if (this != &other) {
 		_name = other.getName();
 		_hit_points = other.getHitPoints();
@@ -104,4 +104,11 @@ void	ClapTrap::beRepaired(unsigned int amount) {
 	std::cout << "ClapTrap " << _name << " has been repaired by " << amount
 			  << " points. Total HP: " << _hit_points << "." << std::endl;
 	return ;
+}
+
+void	ClapTrap::getStatus(void) const {
+	std::cout << "ClapTrap " << _name << " Status: "
+			  << "HP: " << _hit_points << ", "
+			  << "EP: " << _energy_points << ", "
+			  << "AD: " << _attack_damage << "." << std::endl;
 }

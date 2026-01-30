@@ -3,4 +3,5 @@ obj/
 *.o
 
 ## Executable files
-claptrap
+ClapTrap
+ScavTrap
